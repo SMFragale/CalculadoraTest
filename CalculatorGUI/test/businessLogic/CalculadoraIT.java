@@ -40,7 +40,7 @@ public class CalculadoraIT {
     /**
      * Test of add method, of class Calculadora.
      */
-    @Test
+    /*@Test
     public void testAdd() {
         System.out.println("add");
         float a = 3F;
@@ -48,17 +48,97 @@ public class CalculadoraIT {
         float expResult = 8F;
         float result = Calculadora.add(a, b);
         assertEquals(expResult, result, 0.0);
+    }*/
+
+    @Test
+    public void twoAndThreeIsFive(){
+        System.out.println("twoAndThreeIsFive");
+        float a = 2F;
+        float b = 3F;
+        float expResult = 5F;
+        float result = Calculadora.add(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void twoAndZeroIsTwo(){
+        System.out.println("twoAndZeroIsTwo");
+        float a = 2F;
+        float b = 0F;
+        float expResult = 2F;
+        float result = Calculadora.add(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void twoAndMinusTwoIsZero(){
+        System.out.println("twoAndMinusTwoIsZero");
+        float a = 2F;
+        float b = -2F;
+        float expResult = 0F;
+        float result = Calculadora.add(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void ZeroAndMinusNineIsMinusNine(){
+        System.out.println("ZeroAndMinusNineIsMinusNine");
+        float a = 0F;
+        float b = -9F;
+        float expResult = -9F;
+        float result = Calculadora.add(a, b);
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
      * Test of substract method, of class Calculadora.
      */
-    @Test
+    /*@Test
     public void testSubstract() {
         System.out.println("substract");
         float a = 10F;
         float b = 5F;
         float expResult = 5F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+    }*/
+
+    @Test
+    public void threeMinusTwoIsOne() {
+        System.out.println("threeMinusTwoIsOne");
+        float a = 3F;
+        float b = 2F;
+        float expResult = 1F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void threeMinusThreeIsZero() {
+        System.out.println("threeMinusThreeIsZero");
+        float a = 3F;
+        float b = 3F;
+        float expResult = 0F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void threeMinusMinusThreeIsSix() {
+        System.out.println("threeMinusMinusThreeIsSix");
+        float a = 3F;
+        float b = -3F;
+        float expResult = 6F;
+        float result = Calculadora.substract(a, b);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void MinusNineMinusMinusTenIsOne() {
+        System.out.println("MinusNineMinusMinusTenIsOne");
+        float a = -9F;
+        float b = -10F;
+        float expResult = 1F;
         float result = Calculadora.substract(a, b);
         assertEquals(expResult, result, 0.0);
     }
