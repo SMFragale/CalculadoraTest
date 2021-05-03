@@ -144,9 +144,7 @@ public class FXMLDocumentController implements Initializable {
             operation = 4; //Division
             display.setText("");
         }else if (event.getSource() == back){
-            if(display.getText().length() > 0) {
-                display.setText(display.getText().substring(0, display.getText().length() - 1));
-            }
+            display.setText(Calculadora.back(display.getText()));
         }else if(event.getSource() == mod){
             data = Float.parseFloat(display.getText());
             operation = 5; //Mod
@@ -154,13 +152,10 @@ public class FXMLDocumentController implements Initializable {
         }else if(event.getSource() == signo){
             if(display.getText().length() > 0) {
                 data = Float.parseFloat(display.getText());
-                data *= -1;
-                display.setText(String.valueOf(data));
+                display.setText(String.valueOf(Calculadora.signo(data)));
             }
         }else if(event.getSource() == coma){
-            if(display.getText().length() > 0 && ! display.getText().contains(".") ){
-                display.setText(display.getText() + ".");
-            }
+            display.setText(Calculadora.coma(display.getText()));
         }else if(event.getSource() == tenPow){
             if(display.getText().length() > 0) {
                 display.setText(String.valueOf( Calculadora.tenPow(Double.parseDouble(display.getText())) ));

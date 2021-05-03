@@ -31,6 +31,12 @@ public class Calculadora {
         return a/b;
     }
 
+    public static String back(String s){return s.length() > 0 ? s.substring(0, s.length() - 1): s;}
+
+    public static float signo(float f){return f*-1;}
+
+    public static String coma(String s){return s.length() > 0 && !(s.contains(".")) ? s + "." : s;}
+
     public static float mod(float a, float b){ return a%b;}
 
     public static float tenPow(double a){return (float) Math.pow(10, a);}
