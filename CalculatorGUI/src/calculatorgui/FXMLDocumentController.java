@@ -8,6 +8,8 @@ package calculatorgui;
 import businessLogic.Calculadora;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.sun.org.apache.xerces.internal.xs.datatypes.XSDecimal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -141,12 +143,49 @@ public class FXMLDocumentController implements Initializable {
             data = Float.parseFloat(display.getText());
             operation = 4; //Division
             display.setText("");
+        }else if (event.getSource() == back){
+            if(display.getText().length() > 0) {
+                display.setText(display.getText().substring(0, display.getText().length() - 1));
+            }
+        }else if(event.getSource() == mod){
+            data = Float.parseFloat(display.getText());
+            operation = 5; //Mod
+            display.setText("");
+        }else if(event.getSource() == signo){
+            if(display.getText().length() > 0) {
+                data = Float.parseFloat(display.getText());
+                data *= -1;
+                display.setText(String.valueOf(data));
+            }
+        }else if(event.getSource() == coma){
+            if(display.getText().length() > 0 && ! display.getText().contains(".") ){
+                display.setText(display.getText() + ".");
+            }
+        }else if(event.getSource() == tenPow){
+            if(display.getText().length() > 0) {
+                display.setText(String.valueOf( Calculadora.tenPow(Double.parseDouble(display.getText())) ));
+            }
+        }else if(event.getSource() == sqrt){
+            if(display.getText().length() > 0) {
+                display.setText(String.valueOf(Calculadora.sqrt(Double.parseDouble(display.getText()))));
+            }
+        }
+        else if(event.getSource() == nFact){
+            if(display.getText().length() > 0) {
+                display.setText(String.valueOf(Calculadora.nFact(Double.parseDouble(display.getText()))));
+            }
+        }
+        else if(event.getSource() == log){
+            if(display.getText().length() > 0) {
+                display.setText(String.valueOf(Calculadora.log(Double.parseDouble(display.getText()))));
+            }
         }
         else if (event.getSource() == equals) {
             float secondOperand = Float.parseFloat(display.getText());
+            float ans;
             switch (operation) {
                 case 1: //Addition
-                    float ans = Calculadora.add(data, secondOperand);
+                    ans = Calculadora.add(data, secondOperand);
                     display.setText(String.valueOf(ans));break;
                 case 2: //Subtraction
                     ans = Calculadora.substract(data, secondOperand);
@@ -158,6 +197,11 @@ public class FXMLDocumentController implements Initializable {
                     ans = 0f;
                     ans = Calculadora.div(data, secondOperand);                    
                     display.setText(String.valueOf(ans));break;
+                case 5: //Mod
+                    ans = 0f;
+                    ans = Calculadora.mod(data, secondOperand);
+                    display.setText(String.valueOf(ans));
+                    break;
             }
         }
     }

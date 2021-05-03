@@ -30,4 +30,14 @@ public class Calculadora {
     {
         return a/b;
     }
+
+    public static float mod(float a, float b){ return a%b;}
+
+    public static float tenPow(double a){return (float) Math.pow(10, a);}
+
+    public static float sqrt(double a){return (float) Math.sqrt(a);}
+
+    public static float nFact(double a){ if(a <= 2){ return (float) a;} return (float) a * nFact(a-1); }
+
+    public static float log(double a){ return (float) Math.log(a);}
 }

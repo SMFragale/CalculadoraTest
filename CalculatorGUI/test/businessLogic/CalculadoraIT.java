@@ -61,7 +61,6 @@ public class CalculadoraIT {
         float expResult = 5F;
         float result = Calculadora.substract(a, b);
         assertEquals(expResult, result, 0.0);
-        
     }
 
     /**
