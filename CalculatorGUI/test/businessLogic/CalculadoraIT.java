@@ -348,4 +348,128 @@ public class CalculadoraIT {
         assertEquals(expResult, result, 0.0);
     }
 
+    @Test
+    public void FactorialOfSixIsSevenTwenty() {
+        System.out.println("FactorialOfSixIsSevenTwenty");
+        double a = 6;
+        double expResult = 720;
+        double result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void FactorialOfCeroIsOne() {
+        System.out.println("FactorialOfCeroIsOne");
+        double a = 0;
+        double expResult = 1;
+        double result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void MinusFiveFactorialIsMinusOneTwenty() {
+        System.out.println("MinusFiveFactorialIsMinusOneTwenty");
+        double a = -5;
+        double expResult = -120;
+        double result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void OneFactorialIsOne() {
+        System.out.println("OneFactorialIsOne");
+        double a = 1;
+        double expResult = 1;
+        double result = Calculadora.nFact(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void LogTwoIsPointThreeOOne() {
+        System.out.println("LogTwoIsPointThreeOOne");
+        double a = 2;
+        double expResult = 0.301;
+        double result = Calculadora.log(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void LogZeroIsMinusInfinity() {
+        //TODO
+        System.out.println("LogTwoIsPointThreeOOne");
+        double a = 2;
+        double expResult = 0.301;
+        double result = Calculadora.log(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void LogMinusOneIsError() {
+        //TODO
+        System.out.println("LogMinusOneIsError");
+        double a = -1;
+        try {
+            double result = Calculadora.log(a);
+            fail();
+        }
+        catch(Exception e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void LogTenIsOne() {
+        //TODO
+        System.out.println("LogTenIsOne");
+        double a = 10;
+        double expResult = 1;
+        double result = Calculadora.log(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void LogHundredIsTwo() {
+        System.out.println("LogHundredIsTwo");
+        double a = 100;
+        double expResult = 10;
+        double result = Calculadora.log(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void SQRTZeroIsZero() {
+        System.out.println("SQRTZeroIsZero");
+        double a = 0;
+        double expResult = 0;
+        double result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void SQRTMinusOneIsError() {
+        System.out.println("SQRTZeroIsZero");
+        double a = 0;
+        double expResult = 0;
+        double result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void SQRTFourIsTwo() {
+        System.out.println("SQRTFourIsTwo");
+        double a = 4;
+        double expResult = 2;
+        double result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
+    @Test
+    public void SQRTHundredIsTen() {
+        System.out.println("SQRTHundredIsTen");
+        double a = 100;
+        double expResult = 10;
+        double result = Calculadora.sqrt(a);
+        assertEquals(expResult, result, 0.0);
+    }
+
 }
