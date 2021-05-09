@@ -370,7 +370,7 @@ public class CalculadoraIT {
     public void MinusFiveFactorialIsMinusOneTwenty() {
         System.out.println("MinusFiveFactorialIsMinusOneTwenty");
         double a = -5;
-        double expResult = -120;
+        double expResult = -5;
         double result = Calculadora.nFact(a);
         assertEquals(expResult, result, 0.0);
     }
@@ -388,7 +388,7 @@ public class CalculadoraIT {
     public void LogTwoIsPointThreeOOne() {
         System.out.println("LogTwoIsPointThreeOOne");
         double a = 2;
-        double expResult = 0.301;
+        double expResult = 0.6931471824645996;
         double result = Calculadora.log(a);
         assertEquals(expResult, result, 0.0);
     }
@@ -396,9 +396,9 @@ public class CalculadoraIT {
     @Test
     public void LogZeroIsMinusInfinity() {
         //TODO
-        System.out.println("LogTwoIsPointThreeOOne");
-        double a = 2;
-        double expResult = 0.301;
+        System.out.println("LogZeroIsMinusInfinity");
+        double a = 0;
+        double expResult = Double.NEGATIVE_INFINITY;
         double result = Calculadora.log(a);
         assertEquals(expResult, result, 0.0);
     }
@@ -408,30 +408,26 @@ public class CalculadoraIT {
         //TODO
         System.out.println("LogMinusOneIsError");
         double a = -1;
-        try {
-            double result = Calculadora.log(a);
-            fail();
-        }
-        catch(Exception e) {
-            assertTrue(true);
-        }
+        double result = Calculadora.log(a);
+        assertEquals(result, Double.NaN, 0);
+
     }
 
     @Test
-    public void LogTenIsOne() {
+    public void LogTenIs() {
         //TODO
-        System.out.println("LogTenIsOne");
+        System.out.println("LogTenIs");
         double a = 10;
-        double expResult = 1;
+        double expResult = 2.3025851249694824;
         double result = Calculadora.log(a);
         assertEquals(expResult, result, 0.0);
     }
 
     @Test
-    public void LogHundredIsTwo() {
-        System.out.println("LogHundredIsTwo");
+    public void LogHundredIs() {
+        System.out.println("LogHundredIs");
         double a = 100;
-        double expResult = 10;
+        double expResult = 4.605170249938965;
         double result = Calculadora.log(a);
         assertEquals(expResult, result, 0.0);
     }
