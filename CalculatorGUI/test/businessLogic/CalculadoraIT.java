@@ -385,8 +385,8 @@ public class CalculadoraIT {
     }
 
     @Test
-    public void LogTwoIsPointThreeOOne() {
-        System.out.println("LogTwoIsPointThreeOOne");
+    public void LogTwoIs() {
+        System.out.println("LogTwoIs");
         double a = 2;
         double expResult = 0.6931471824645996;
         double result = Calculadora.log(a);
@@ -444,8 +444,8 @@ public class CalculadoraIT {
     @Test
     public void SQRTMinusOneIsError() {
         System.out.println("SQRTZeroIsZero");
-        double a = 0;
-        double expResult = 0;
+        double a = -1;
+        double expResult = Double.NaN;
         double result = Calculadora.sqrt(a);
         assertEquals(expResult, result, 0.0);
     }
