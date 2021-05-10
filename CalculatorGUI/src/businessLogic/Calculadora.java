@@ -44,6 +44,8 @@ public class Calculadora {
     public static float sqrt(double a){return (float) Math.sqrt(a);}
 
     public static float nFact(double a){
+        if(a == 0)
+            return 1;
         if(a <= 2){
             return (float) a;
         }
